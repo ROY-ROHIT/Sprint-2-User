@@ -1,0 +1,99 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Product</h3>
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm" appIdentityRevealed>
+
+        
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" id="productName" [(ngModel)]="product.productName" name="productName" required minlength="3" #productName="ngModel">
+            
+            <div *ngIf="productName.errors && productName.touched" class="alert">
+                <div *ngIf="productName.errors.required">Product Name is required.</div>
+                <div *ngIf="productName.errors.minlength">Name must be greater than 2 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Brand Name</label>
+            <input type="text" class="form-control" id="brandName" [(ngModel)]="product.brandName" name="brandName" required minlength="2" #brandName="ngModel">
+
+            <div *ngIf="brandName.errors && brandName.touched" class="alert">
+                <div *ngIf="brandName.errors.required">Brand Name is required.</div>
+                <div *ngIf="brandName.errors.minlength">Brand Name must be greater than or equal to 2 Characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" class="form-control" id="category" [(ngModel)]="product.category" name="category" required min="2" #category="ngModel">
+
+            <div *ngIf="category.errors && category.touched" class="alert">
+                <div *ngIf="category.errors.required">Category is required.</div>
+                <div *ngIf="category.errors.min">Minimum 2 characters are required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price" required min="0" #price="ngModel">
+
+            <div *ngIf="price.errors && price.touched" class="alert">
+                <div *ngIf="price.errors.required">Price is required.</div>
+                <div *ngIf="price.errors.min">Price Must Be A Positive Value</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Color</label>
+            <input type="text" class="form-control" id="color" [(ngModel)]="product.color" name="color" required minlength="3" #color="ngModel">
+
+            <div *ngIf="color.errors && color.touched" class="alert">
+                <div *ngIf="color.errors.required">Color is required.</div>
+                <div *ngIf="color.errors.minlength">Color must be greater than 2 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Specification</label>
+            <input type="text" class="form-control" id="specification" [(ngModel)]="product.specification" name="specification" required #specification="ngModel">
+
+            <div *ngIf="specification.errors && specification.touched" class="alert">
+                <div *ngIf="specification.errors.required">Specification is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" class="form-control" id="quantity" [(ngModel)]="product.quantity" name="quantity" required min="0" #quantity="ngModel">
+
+            <div *ngIf="quantity.errors && quantity.touched" class="alert">
+                <div *ngIf="quantity.errors.required">Quantity is required.</div>
+                <div *ngIf="quantity.errors.min">Quantity must be a Positive Integer</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>User Rating</label>
+            <input type="number" class="form-control" id="userRatings" [(ngModel)]="product.userRatings" name="userRatings" required min="0" #userRatings="ngModel">
+
+            <div *ngIf="userRatings.errors && userRatings.touched" class="alert">
+                <div *ngIf="userRatings.errors.required">User Rating is required.</div>
+                <div *ngIf="userRatings.errors.type">Rating must be Integer</div>
+                <div *ngIf="userRatings.errors.min">Rating must be a Positive Integer</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" class="form-control" id="imgUrl" [(ngModel)]="product.imgUrl" name="imgUrl" required #imgUrl="ngModel">
+
+            <div *ngIf="imgUrl.errors && imgUrl.touched" class="alert">
+                <div *ngIf="imgUrl.errors.required">Image URL is required.</div>
+            </div>
+        </div>
+
+        <br/>
+        <button class="btn btn-success" type="submit" [disabled]="productForm.invalid">Submit</button>
+        <p>Complete the form to enable the Submit button.</p>
+    </form>
+</div>

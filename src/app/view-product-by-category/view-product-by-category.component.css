@@ -1,0 +1,23 @@
+.price{
+    text-align: center;
+    color:black;
+    
+    border: 2px solid green;
+    background-color: greenyellow;
+    border-radius: 12px;
+}
+.name{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: cursive;
+    color: indigo;
+}
+.card{
+    text-align: center;
+}
+.card-footer{
+    background-color:gold;
+}
+.card-img-top{
+    height: 200px;
+}

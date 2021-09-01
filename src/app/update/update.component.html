@@ -1,0 +1,75 @@
+<div>
+  <a routerLink="/allcustomers"><h1 style="text-align: center;">Profile Details</h1></a> <br/>
+</div>
+<div class="container">
+    <h2> {{cust.firstName}}'s Profile : </h2>
+    </div>
+    
+    <div class ="container">
+      <div class="row">
+      <div class="col-4">
+      <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title"> Customer Details : </h5>
+            <div class="card" style="width: 20rem;">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Customer ID : {{cust.customerId}}</li>
+          <li class="list-group-item"> First Name : {{cust.firstName}}</li>
+          <li class="list-group-item"> Last Name : {{cust.lastName}}</li>
+                <li class="list-group-item">Mobile Number : {{cust.mobileNumber}}</li>
+                <li class="list-group-item">Status : {{cust.status}}</li>
+              </ul>
+        </div>
+            <button type="button" class="btn btn-primary" (click)="goToCustupd()">
+              Update Customer
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class ="col-4">
+      <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title">Address Details : </h5>
+            <div class="card" style="width: 20rem;">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">AddressID : {{cust.address.addressId}}</li>
+                <li class="list-group-item">Street No. : {{cust.address.streetNo}}</li>
+                <li class="list-group-item">Building Name : {{cust.address.buildingName}}</li>
+                <li class="list-group-item">City : {{cust.address.city}}</li>
+                <li class="list-group-item">State : {{cust.address.state}}</li>
+                <li class="list-group-item">Country : {{cust.address.country}}</li>
+                <li class="list-group-item">Pincode : {{cust.address.pincode}}</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="goToAddupd()">
+              Update Address
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class ="col-4">
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title"> User Details : </h5>
+            <div class="card" style="width: 20rem;">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">UserID : {{cust.user.userID}}</li>
+                <li class="list-group-item">Password : {{cust.user.userPassword}}</li>
+                <li class="list-group-item">Role : {{cust.user.role}}</li>
+                <li class="list-group-item">Email : {{cust.user.email}}</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="goToUserupd()">
+              Update User
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <button type="button" class="btn btn-danger" (click)="delCustomer()">Delete Customer</button>
+      
+    

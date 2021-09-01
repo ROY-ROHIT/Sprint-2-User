@@ -1,0 +1,90 @@
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#">Category</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-list">
+                    <i class="bi bi-house-fill"></i>
+                  All
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Clothing">
+                    <i class="bi bi-house-fill"></i>
+                  Clothing
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Electronics">
+                    <i class="bi bi-house-fill"></i>
+                  Electronics
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Food">
+                    <i class="bi bi-house-fill"></i>
+                  Food
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Education">
+                    <i class="bi bi-house-fill"></i>
+                  Education
+                </a>
+            </li>
+        </ul>
+      </div>
+</nav>
+<div class="card" >
+    
+    <div class="card-header">
+        <span class="col-md-3">List of Products</span>    
+        <a routerLink="add-product" class="btn btn-info float-right" tabindex="-1" role="button">Add New</a>
+        <!-- <button routerLink="add-product" type="button" class="btn btn-info float-right">Add</button> -->
+    </div>
+    <div class="card-body">
+     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Product...">
+
+        <table class="table table-striped table-responsive">
+
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Brand Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Color</th>
+                    <th>Specification</th>
+                    <th>Quantity</th>
+                    <th>UserRatings</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pro of product | filter:searchText">
+
+                    <td>{{pro.productId}}</td>
+                    <td>{{pro.productName}}</td>
+                    <td>{{pro.brandName}}</td>
+                    <td>{{pro.category}}</td>
+                    <td>{{pro.price}}</td>
+                    <td>{{pro.color}}</td>
+                    <td>{{pro.specification}}</td>
+                    <td>{{pro.quantity}}</td>
+                    <td>{{pro.userRatings}}</td>
+                    <td>
+                        <button (click)="updateProduct(pro.productId)" class="btn btn-outline-success">Update</button>
+                    </td>
+                    <td>
+                        <button (click)="deleteProduct(pro.productId)" class="btn btn-outline-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

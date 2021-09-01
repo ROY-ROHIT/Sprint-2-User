@@ -1,0 +1,48 @@
+<div class="container"> <br/>
+    <h1>List of All Customers</h1><br/>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Customer..."> <br/><br/>
+     <div class="row">
+      <table class="table table-striped" border=2px>
+        <tbody>
+          <tr>
+            <th>CustomerId</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile Number</th>
+            <th>Status</th>
+            <th>Address Id</th> 
+            <th>Street No</th>
+            <th>Building Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Pincode</th>
+            <th>UserID</th> 
+            <th>Password</th>
+            <th>Role</th>
+            <th>Email</th>
+          </tr>
+          <tr *ngFor="let items of allCust | filter:searchText">
+    
+            <td>{{items.customerId}}</td>
+            <td>{{items.firstName}}</td>
+            <td>{{items.lastName}}</td>
+            <td>{{items.mobileNumber}}</td>
+            <td>{{items.status}}</td>
+            <td>{{items.address.addressId}}</td>
+            <td>{{items.address.streetNo}}</td>
+            <td>{{items.address.buildingName}}</td>
+            <td>{{items.address.city}}</td>
+            <td>{{items.address.state}}</td>
+            <td>{{items.address.country}}</td>
+            <td>{{items.address.pincode}}</td>
+            <td>{{items.user.userID}}</td>
+            <td>{{items.user.userPassword}}</td>
+            <td>{{items.user.role}}</td>
+            <td>{{items.user.email}}</td>
+  
+          </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

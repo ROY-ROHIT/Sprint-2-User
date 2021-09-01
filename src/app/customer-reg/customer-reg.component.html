@@ -1,0 +1,161 @@
+<div class="container"><br/>
+    <h2>One More Step And You Are Good To Go....</h2><br/> <br/>
+    <h4> Create Account:</h4>
+  <form class="row g-3" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name" name="firstName" formControlName="firstName">
+        <span *ngIf="regForm.get('firstName')?.errors && (regForm.get('firstName')?.dirty || regForm.get('firstName')?.touched)"
+          class="alert">
+        <span *ngIf="regForm.get('firstName')?.errors?.required">
+          First Name is required
+        </span>
+        <span *ngIf="regForm.get('firstName')?.errors?.minlength || regForm.get('firstName')?.errors?.maxlength">
+         First Name should have greater than 3 characters and less than 10 characters
+         </span>
+      </span>
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name" name="lastName" formControlName="lastName">
+        <span *ngIf="regForm.get('lastName')?.errors && (regForm.get('lastName')?.dirty || regForm.get('lastName')?.touched)"
+          class="alert">
+        <span *ngIf="regForm.get('lastName')?.errors?.required">
+          Last Name is required
+        </span>
+        <span *ngIf="regForm.get('lastName')?.errors?.minlength || regForm.get('lastName')?.errors?.maxlength">
+         Last Name should have greater than 3 characters and less than 10 characters
+         </span>
+      </span>
+      </div>
+      <div class="col-md-6">
+        <label for="mobileNumber" class="form-label">Mobile Number</label>
+        <input type="number" class="form-control" id="mobileNumber" placeholder="Enter Your Mobile Number" name="mobileNumber" formControlName="mobileNumber">
+        <span *ngIf="regForm.get('mobileNumber')?.errors && (regForm.get('mobileNumber')?.dirty || regForm.get('mobileNumber')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('mobileNumber')?.errors?.required">
+            Mobile Number is required
+          </span>
+          <span *ngIf="regForm.get('mobileNumber')?.errors?.minlength || regForm.get('mobileNumber')?.errors?.maxlength">
+           Mobile Number should have 10 digits
+           </span>
+        </span>
+      </div>
+      <div class="col-md-6">
+        <label for="status" class="form-label">Status</label>
+        <input type="text" class="form-control" id="status" placeholder="Active/Inactive" name="status" placeholder="Active/Inactive" formControlName="status">
+        <span *ngIf="regForm.get('status')?.errors && (regForm.get('status')?.dirty || regForm.get('status')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('status')?.errors?.required">
+            Status No. is required.
+          </span>
+        </span>
+      </div>
+      <div class="col-md-6">
+        <label for="streetNo" class="form-label">Street No.</label>
+        <input type="text" class="form-control" id="streetNo"placeholder="Enter Your Street No." name="streetNo" formControlName="streetNo">
+        <span *ngIf="regForm.get('streetNo')?.errors && (regForm.get('streetNo')?.dirty || regForm.get('streetNo')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('streetNo')?.errors?.required">
+            Street No. is required.
+          </span>
+        </span>
+      </div>
+      <div class="col-md-6">
+        <label for="buildingName" class="form-label">Building Name</label>
+        <input type="text" class="form-control" id="buildingName" placeholder="Enter Your Building Name" name="buildingName" formControlName="buildingName">
+        <span *ngIf="regForm.get('buildingName')?.errors && (regForm.get('buildingName')?.dirty || regForm.get('buildingName')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('buildingName')?.errors?.required">
+            Building Name is required.
+          </span>
+        </span>
+      </div>
+      <div class="col-md-4">
+        <label for="city" class="form-label">City</label>
+        <input type="text" class="form-control" id="city" placeholder="Enter City" name="city" formControlName="city">
+        <span *ngIf="regForm.get('city')?.errors && (regForm.get('city')?.dirty || regForm.get('city')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('city')?.errors?.required">
+            City is required.
+          </span>
+        </span>
+      </div>
+      <div class="col-md-4">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control" id="state" placeholder="Enter State" name="state" formControlName="state">
+          <span *ngIf="regForm.get('state')?.errors && (regForm.get('state')?.dirty || regForm.get('state')?.touched)"
+          class="alert">
+          <span *ngIf="regForm.get('state')?.errors?.required">
+            State is required.
+          </span>
+        </span>
+      </div>
+      <div class="col-md-4">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" class="form-control" id="country" placeholder="Enter Country" name="country" formControlName="country">
+          <span *ngIf="regForm.get('country')?.errors && (regForm.get('country')?.dirty || regForm.get('country')?.touched)"
+            class="alert">
+            <span *ngIf="regForm.get('country')?.errors?.required">
+              Country is required.
+            </span>
+          </span>
+      </div>
+      <div class="col-12">
+          <label for="pincode" class="form-label">Pincode</label>
+          <input type="text" class="form-control" id="pincode" placeholder="Enter Your Pincode" name="pincode" formControlName="pincode">
+          <span *ngIf="regForm.get('pincode')?.errors && (regForm.get('pincode')?.dirty || regForm.get('pincode')?.touched)"
+            class="alert">
+            <span *ngIf="regForm.get('pincode')?.errors?.required">
+              Pincode is required.
+            </span>
+            <span *ngIf="regForm.get('pincode')?.errors?.minlength || regForm.get('pincode')?.errors?.maxlength">
+             Pincode should be of 6 characters.
+            </span>
+          </span>
+      </div>
+      <div class="col-md-6">
+          <label for="userPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="userPassword" placeholder="Enter Your Password" name="userPassword" formControlName="userPassword">
+          <span *ngIf="regForm.get('userPassword')?.errors && (regForm.get('userPassword')?.dirty || regForm.get('userPassword')?.touched)"
+            class="alert">
+            <span *ngIf="regForm.get('userPassword')?.errors?.required">
+              Password is required.
+            </span>
+            <span *ngIf="regForm.get('userPassword')?.errors?.pattern">
+             Password should contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character.
+            </span>
+          </span>
+      </div>
+      <div class="col-md-6">
+          <label for="role" class="form-label">Role</label>
+         <!-- <input type= "text" class="form-control" id="role" value="Customer" formControlName="role">-->
+          <select id="role" name="role" class="form-select" formControlName="role">
+              <option selected>Customer</option>
+          </select>
+          <span *ngIf="regForm.get('role')?.errors && (regForm.get('role')?.dirty || regForm.get('role')?.touched)"
+            class="alert">
+            <span *ngIf="regForm.get('role')?.errors?.required">
+              Role is required.
+            </span>
+            </span>
+      </div>
+      <div class="col-md-12">
+          <label for="email" class="form-label">Email ID</label>
+          <input type="email" class="form-control" id="email" placeholder="something@gmail.com" name="email" formControlName="email">
+          <!-- <span *ngIf="regForm.get('email')?.errors" class="alert">Email is required</span> -->
+          <span *ngIf="regForm.get('email')?.errors && (regForm.get('email')?.dirty || regForm.get('email')?.touched)"
+            class="alert">
+            <span *ngIf="regForm.get('email')?.errors?.required">
+              Email is required.
+            </span>
+            <span *ngIf="regForm.get('email')?.errors?.email">
+              Not a Valid Email.
+            </span>
+          </span>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Sign in</button>
+      </div>
+  </form>
+  </div>

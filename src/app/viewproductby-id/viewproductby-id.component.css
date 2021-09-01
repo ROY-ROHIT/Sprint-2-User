@@ -1,0 +1,51 @@
+.row{
+    height: 600px;
+}
+.card{
+    flex-direction: row;
+  }
+.card img {
+width: 40%;
+}
+hr.first{
+    border: solid olive;
+}
+.name{
+    font-size: x-large;
+    color: maroon;
+    font-weight: bold;
+}
+.price{
+    font-size: xx-large;
+    font-weight: bold;
+    color: tomato;
+}
+.rating{
+    border: solid green;
+    border-radius: 18px;
+    width: 70px;
+    font-size: x-large;
+    color: green;
+}
+.details{
+    font-size: xx-large;
+    color:navy;
+}
+.index{
+    font-size: x-large;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+    color:lightseagreen
+}
+.element{
+    font-size: larger;
+    font-weight: bolder;
+    font-style: italic;
+    color: teal;
+    
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+}

@@ -1,0 +1,70 @@
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" routerLink="/product">Category</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-list">
+                    <i class="bi bi-diagram-3-fill"></i>
+                  All
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Clothing">
+                    <i class="bi bi-eyeglasses"></i>
+                  Clothing
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Electronics">
+                    <i class="bi bi-plug-fill"></i>
+                  Electronics
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Food">
+                    <i class="bi bi-emoji-heart-eyes-fill"></i>
+                  Food
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Education">
+                    <i class="bi bi-pen-fill"></i>
+                  Education
+                </a>
+            </li>
+            <li>
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Product...">
+            </li>
+        </ul>
+      </div>
+</nav>
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+   
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-lg-3 mb-3" *ngFor="let pro of product | filter:searchText" (click)=onSelect(pro)>
+            <div class="card border-info mb-3 h-100">
+        
+                    <img src="{{pro.imgUrl}}" class="card-img-top" alt="...">
+                    <div class="card-header"><h5>{{pro.productName}}</h5></div>
+
+                    <div class="card-body">
+                        <div class="name">{{pro.brandName}}</div>
+                        <!-- <div>Specification: {{pro.specification}}</div> -->
+                        <div class="price">Rs. {{pro.price}}</div>
+                        <div>
+                            <i class="bi bi-star-fill"></i>
+                            {{pro.userRatings}}
+                        </div>
+                    </div>
+            
+                <div class="card-footer" href="#">
+                    <i class="bi bi-info-circle"></i>
+                    View More
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

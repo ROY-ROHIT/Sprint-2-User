@@ -1,0 +1,10 @@
+.table{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    color: blue;
+    background-color: burlywood;
+}

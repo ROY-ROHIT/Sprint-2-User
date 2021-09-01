@@ -1,0 +1,94 @@
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" routerLink="/product">DirectMart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-list">
+                    <i class="bi bi-house-fill"></i>
+                  All
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Clothing">
+                    <i class="bi bi-house-fill"></i>
+                  Clothing
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Electronics">
+                    <i class="bi bi-house-fill"></i>
+                  Electronics
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Food">
+                    <i class="bi bi-house-fill"></i>
+                  Food
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-by-category/Education">
+                    <i class="bi bi-house-fill"></i>
+                  Education
+                </a>
+            </li>
+        </ul>
+      </div>
+</nav>
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+   
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="card border-info mt-3 h-100">
+        
+                    <!-- <img src="../assets/img1.jpeg" class="card-img-top" alt="..."> -->
+                    <img src="{{product.imgUrl}}" class="card-img-top" alt="...">
+                    
+                    <div class="card-body">
+                        <div class="name">{{product.brandName}}</div>
+                        <br/>
+                        <div><h5>{{product.productName}}</h5></div>
+                        
+                        <hr class="first">
+                        <div class="price">Rs. {{product.price}}</div>
+                        <br/>
+                        <div class="rating">
+                            <i class="bi bi-star-fill ml-2"></i>
+                            {{product.userRatings}}
+                        </div>
+                        <p class="details"><u>Details:</u></p>
+
+                        <div style="margin-bottom: 6px;">
+                            <span class="index">Specification: </span>
+                            <span class="element">{{product.specification}}</span>
+                        </div>
+                        <div style="margin-bottom: 6px;">
+                            <span class="index">Color: </span>
+                            <span class="element">{{product.color}}</span>
+                        </div>
+                        <div style="margin-bottom: 6px;">
+                            <span class="index">Total product in Stock: </span>
+                            <span class="element">{{product.quantity}}</span>
+                        </div>
+                        
+                        <div class="footer justify-content-md-end">
+                            <button type="button" class="btn btn-warning"><i class="bi bi-cart3"></i>  Add To Cart</button>&nbsp;
+                            <button type="button" class="btn btn-success" routerLink='/order'><i class="bi bi-bag-check-fill"></i>  Buy Now</button>
+                        </div>
+                        
+                    </div>
+
+
+
+
+
+                    
+            
+               
+            </div>
+        </div>
+    </div>
+</div>

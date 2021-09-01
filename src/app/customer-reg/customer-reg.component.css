@@ -1,0 +1,17 @@
+input.ng-invalid{
+    border-left:5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid green;
+}
+.alert{
+    color: red;
+}
+h2{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+h4{
+    font-weight: bold;
+}
